@@ -65,8 +65,10 @@ app.use(passport.session());
 passport.use(new FacebookStrategy({
     clientID: '917269717006511',
     clientSecret: 'a2944e68a3babda9211778b15b697486',
-    callbackURL: 'http://localhost:8099/auth/facebook/callback'
-}, 
+    callbackURL: process.env.NODE_ENV === 'production' 
+        ? 'https://online-shared-song-list.onrender.com/auth/facebook/callback'
+        : 'http://localhost:8099/auth/facebook/callback'
+},
   function(token, refreshToken, profile, done) {
     console.log("Facebook Profile: " + JSON.stringify(profile));
     console.log(profile);
