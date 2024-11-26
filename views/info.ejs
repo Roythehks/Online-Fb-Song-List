@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center; 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                height: 80vh;
+            }
+            .container {
+                width: 50%;
+                margin: 50px auto;
+                padding: 20px;
+                background-color: #b89a80;
+                border-radius: 5px;
+                border: 5px solid #1a5276;
+            }
+            a {
+                display: inline-block;
+                padding: 10px 20px;
+                margin: 20px;
+                background-color: #2e86c1;
+                color: #fff;
+                text-decoration: none;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <H1><%= user.name %>'s shared Song List</H1>
+        <hr/>
+        <b><%= message %></b>
+        <p><a href="/">home</a></p>
+        </div>
+    </body>
+</html>

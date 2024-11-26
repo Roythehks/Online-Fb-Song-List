@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center; 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                height: 80vh;
+            }
+            .container {
+                width: 50%;
+                margin: 50px auto;
+                padding: 20px;
+                background-color: #b89a80;
+                border-radius: 5px;
+                border: 5px solid #1a5276;
+            }
+            a {
+                display: inline-block;
+                padding: 10px 20px;
+                margin: 20px;
+                background-color: #2e86c1;
+                color: #fff;
+                text-decoration: none;
+            }
+            a.url {
+                background-color: transparent; 
+                color: #1100ff;
+            }
+            a.edit {
+                background-color: #f39c12;
+            }
+            a.delete {
+                background-color: #c0392b;
+            }
+            a.home {
+                background-color: #27ae60;
+            }
+            a:hover {
+                background-color: #3498db;
+            }
+        </style>
+    </head>
+    <html>
+    <body>
+        <div class = container>
+        <H1><%= user.name %>'s shared Song List</H1>
+        <hr/>
+        <H2>About this Song:</H2><hr>
+        <p>Name of the song: <%= Song.songName %></i></p>
+        <p>Singer: <%= Song.singer %></p>
+        <p>URL: <a class="url" href="<%= Song.songURL %>"><%= Song.songURL %></a></p>
+
+        <% if (Song.userid) { %>
+            <p><small>This song list is created by <%= user.name %></small></p>
+        <% } %>
+        <br>
+        <a class="edit" href="/edit?_id=<%= Song._id %>">Edit</a>
+        <a class="delete" href="/delete?_id=<%= Song._id %>">Delete</a>
+        <a class="home" href="/">Home</a>
+        </div>
+    </body>
+</html>
+</html>

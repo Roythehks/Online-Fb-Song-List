@@ -1,0 +1,16 @@
+{
+  "name": "Lab ex.3 Task2",
+  "description": "Lab ex.3 Task2",
+  "version": "1.0.0",
+  "dependencies": {
+    "ejs": "*",
+    "express": "*",
+    "express-formidable": "*",
+    "express-session": "*",
+    "passport": "*",
+    "passport-facebook": "*",
+    "mongodb":"^6.7.0"
+  },
+  "engine": "node >= 16.0.0"
+}
+

@@ -1,0 +1,99 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px;
+            padding: 20px;
+            background-color: #b89a80;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: 5px solid #1a5276;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+
+        
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a1 {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .logout {
+            position: absolute;
+            bottom: 100px;
+            left: 85%;
+            transform: translateX(-50%);
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px;
+            background-color: #2e86c1;
+            text-decoration: none;
+        }
+        .logout a {
+            color: #fff; 
+        }
+
+        a.create{
+            background-color: #2e86c1;
+            color: #fff;
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hi <%= user.name %>, welcome to your shared Song List</h1>
+        <hr/>
+        <h1>Song List</h1>
+        <h2>There are a total of (<%= List %>) song(s) in your song list</h2>
+        <ul>
+            <% for (var s of Song) { %>
+            <p><a href="/details?_id=<%= s._id %>"><%= s.songName %></a></p>
+            <% } %>
+        </ul>
+        <a class="create" href='/create'>Add a Song to your song list</a>
+        
+    </div>
+    <br/>
+    <div class="logout">
+        <a href='/logout'>Logout</a>
+    </div>
+</body>
+</html>
